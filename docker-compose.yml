@@ -1,0 +1,35 @@
+services:
+  mysql:
+    container_name: mysql_container
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql
+    restart: unless-stopped
+
+  phpmyadmin:
+    container_name: phpmyadmin_container
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "8080:80"
+    networks:
+      - mysql
+
+networks:
+  mysql:
+    driver: bridge
+
+volumes:
+  mysql:
