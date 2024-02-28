@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS course_db;
+CREATE DATABASE IF NOT EXISTS exam_db;
+CREATE DATABASE IF NOT EXISTS reservation_db;
+CREATE DATABASE IF NOT EXISTS result_db;
+
+CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON course_db.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON exam_db.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON reservation_db.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON result_db.* TO 'user'@'%';
+FLUSH PRIVILEGES;

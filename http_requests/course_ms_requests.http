@@ -1,0 +1,70 @@
+POST http://localhost:8081/courses
+Content-Type: application/json
+
+{
+    "courseName": "Sistemi cloud",
+    "professors": ["Giuseppe Pappalardo", "Andrea Francesco Fornaia"],
+    "cfu": 9,
+    "ssd": "INF/01"
+}
+
+###
+
+POST http://localhost:8081/courses
+Content-Type: application/json
+
+{
+    "courseName": "Ingegneria dei sistemi distribuiti",
+    "professors": ["Emiliano Alessio Tramontana", "Andrea Francesco Fornaia"],
+    "cfu": 9,
+    "ssd": "INF/01"
+}
+
+###
+
+POST http://localhost:8081/courses
+Content-Type: application/json
+
+{
+    "courseName": "Machine learning",
+    "professors": ["Giovanni Maria Farinella"],
+    "cfu": 6,
+    "ssd": "INF/01"
+}
+
+###
+
+POST http://localhost:8081/courses
+Content-Type: application/json
+
+{
+    "courseName": "Deep learning",
+    "professors": ["Giovanni Maria Farinella", "Francesco Ragusa"],
+    "cfu": 6,
+    "ssd": "INF/01"
+}
+
+###
+
+PUT http://localhost:8081/courses
+Content-Type: application/json
+
+{
+    "id": 4,
+    "courseName": "Deep learning",
+    "professors": ["Giovanni Maria Farinella"],
+    "cfu": 6,
+    "ssd": "INF/01"
+}
+
+###
+
+DELETE http://localhost:8081/courses/4
+
+###
+
+GET http://localhost:8081/courses
+
+###
+
+GET http://localhost:8081/courses/Sistemi cloud
