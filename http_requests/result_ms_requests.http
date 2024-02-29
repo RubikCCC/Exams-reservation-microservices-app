@@ -1,4 +1,4 @@
-POST http://localhost:8084/results
+POST http://localhost:8080/results
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8084/results
+POST http://localhost:8080/results
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8084/results
+POST http://localhost:8080/results
 Content-Type: application/json
 
 {
@@ -34,12 +34,12 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8084/results/cacciatoruben@icloud.com
+GET http://localhost:8080/results/cacciatoruben@icloud.com
 
 ###
 
-GET http://localhost:8084/results/paololima@gmail.com
+GET http://localhost:8080/results/paololima@gmail.com
 
 ###
 
-GET http://localhost:8084/results?email=paololima@gmail.com&course_name=Sistemi cloud&date=2025-02-15T10:30:00
+GET http://localhost:8080/results?email=paololima@gmail.com&course_name=Sistemi cloud&date=2025-02-15T10:30:00

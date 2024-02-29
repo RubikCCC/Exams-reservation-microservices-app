@@ -1,4 +1,4 @@
-POST http://localhost:8081/courses
+POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8081/courses
+POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8081/courses
+POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8081/courses
+POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8081/courses
+PUT http://localhost:8080/courses
 Content-Type: application/json
 
 {
@@ -59,12 +59,12 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8081/courses/4
+DELETE http://localhost:8080/courses/4
 
 ###
 
-GET http://localhost:8081/courses
+GET http://localhost:8080/courses
 
 ###
 
-GET http://localhost:8081/courses/Sistemi cloud
+GET http://localhost:8080/courses/Sistemi cloud

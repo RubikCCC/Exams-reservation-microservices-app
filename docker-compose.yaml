@@ -22,6 +22,17 @@ services:
     networks:
       - containers_network
       
+  api-gateway:
+    image: rubencacciato/api-gateway
+    container_name: api_gateway_container
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - service-registry
+    networks:
+      - containers_network
+
   course_ms:
     image: rubencacciato/course_ms
     container_name: course_ms_container
@@ -31,6 +42,7 @@ services:
     depends_on:
       - service-registry
       - mysql
+      - api-gateway
     ports:
       - "8081:8081"
     networks:
@@ -45,6 +57,7 @@ services:
     depends_on:
       - service-registry
       - mysql
+      - api-gateway
     ports:
       - "8082:8082"
     networks:
@@ -59,6 +72,7 @@ services:
     depends_on:
       - service-registry
       - mysql
+      - api-gateway
     ports:
       - "8083:8083"
     networks:
@@ -73,6 +87,7 @@ services:
     depends_on:
       - service-registry
       - mysql
+      - api-gateway
     ports:
       - "8084:8084"
     networks:
