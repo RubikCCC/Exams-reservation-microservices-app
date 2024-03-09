@@ -1,0 +1,1 @@
+To verify that the single-node cluster works, just take the HTTP requests from the previous version (branch version-4) and replace port 8080 with the one assigned by k8s to the api-gateway service (NB: it changes every time the "kubectl apply -f api-gateway-deploy-svc.yaml" command is executed)
