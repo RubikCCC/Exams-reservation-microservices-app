@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: reservation-ms
+  name: reservation-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservation-ms
+  template:
+    metadata:
+      labels:
+        app: reservation-ms
+    spec:
+      containers:
+      - image: rubencacciato/reservation_ms:v1.1
+        name: exam-ms-container
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mysql:3306/reservation_db
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: reservation-ms
+  name: reservation-ms
+spec:
+  ports:
+  - name: 8083-8083
+    port: 8083
+    protocol: TCP
+    targetPort: 8083
+  selector:
+    app: reservation-ms
+  type: ClusterIP

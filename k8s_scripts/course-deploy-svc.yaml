@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: course-ms
+  name: course-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: course-ms
+  template:
+    metadata:
+      labels:
+        app: course-ms
+    spec:
+      containers:
+      - image: rubencacciato/course_ms:v1.1
+        name: course-ms-container
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mysql:3306/course_db
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: course-ms
+  name: course-ms
+spec:
+  ports:
+  - name: 8081-8081
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: course-ms
+  type: ClusterIP

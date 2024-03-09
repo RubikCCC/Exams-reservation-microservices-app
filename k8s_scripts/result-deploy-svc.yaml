@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: result-ms
+  name: result-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result-ms
+  template:
+    metadata:
+      labels:
+        app: result-ms
+    spec:
+      containers:
+      - image: rubencacciato/result_ms:v1.1
+        name: result-ms-container
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mysql:3306/result_db
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: result-ms
+  name: result-ms
+spec:
+  ports:
+  - name: 8084-8084
+    port: 8084
+    protocol: TCP
+    targetPort: 8084
+  selector:
+    app: result-ms
+  type: ClusterIP

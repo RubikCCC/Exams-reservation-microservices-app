@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: exam-ms
+  name: exam-ms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: exam-ms
+  template:
+    metadata:
+      labels:
+        app: exam-ms
+    spec:
+      containers:
+      - image: rubencacciato/exam_ms:v1.1
+        name: exam-ms-container
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:mysql://mysql:3306/exam_db
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: exam-ms
+  name: exam-ms
+spec:
+  ports:
+  - name: 8082-8082
+    port: 8082
+    protocol: TCP
+    targetPort: 8082
+  selector:
+    app: exam-ms
+  type: ClusterIP

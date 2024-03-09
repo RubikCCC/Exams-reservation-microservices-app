@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cloud_project.reservation_ms.external.Exam;
 
-@FeignClient(name = "exam-ms")
+@FeignClient(name = "exam-ms", url = "exam-ms:8082")
 public interface ExamClient {
     @GetMapping("/exams/{id}")
     Exam getExamById(@PathVariable Long id);
