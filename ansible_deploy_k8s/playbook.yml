@@ -1,0 +1,5 @@
+- hosts: masters
+  become: true
+  tasks:
+    - name:
+      shell: "sudo kubectl apply -f k8s_scripts"
