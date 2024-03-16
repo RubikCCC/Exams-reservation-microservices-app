@@ -66,6 +66,7 @@ jobs:
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/result_ms:v1.2
 
   deploy:
+    name: Deploy
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
