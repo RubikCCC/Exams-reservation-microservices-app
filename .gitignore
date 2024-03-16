@@ -44,7 +44,6 @@ secrets.yml
 ###
 
 *.pem
-terraform-ansible-k8s/files/hosts
 **/.terraform/*
 *.tfstate
 *.tfstate.*
