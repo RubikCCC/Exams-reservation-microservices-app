@@ -6,9 +6,11 @@ on:
       - main
 
 jobs:
-  build-and-push:
-    name: Build and push
+  build-push-and-deploy:
+    name: Build, push and deploy
     runs-on: ubuntu-latest
+    env:
+      SSH_PK: ${{ secrets.SSH_PK }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -67,14 +69,7 @@ jobs:
       
       - name: Logout from Docker Hub
         run: docker logout
-
-  deploy:
-    name: Deploy
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    env:
-      SSH_PK: ${{ secrets.SSH_PK }}
-    steps:
+        
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
