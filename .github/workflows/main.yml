@@ -10,7 +10,7 @@ jobs:
     name: Build, push and deploy
     runs-on: ubuntu-latest
     env:
-      SSH_PK: ${{ secrets.SSH_PK }}
+      SSH_PRI_KEY: ${{ secrets.SSH_PRI_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -69,12 +69,12 @@ jobs:
       
       - name: Logout from Docker Hub
         run: docker logout
-        
+
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: ./ansible/ansible_deploy_k8s/playbook.yml        
-          key: ${{ secrets.SSH_PK }}
+          key: ${{ secrets.SSH_PRI_KEY }}
           inventory: |
             [masters]
             54.211.13.43 ansible_user=ubuntu
