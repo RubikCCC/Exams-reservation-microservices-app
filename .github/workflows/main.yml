@@ -77,4 +77,4 @@ jobs:
           key: ${{ secrets.SSH_PRI_KEY }}
           inventory: |
             [masters]
-            54.211.13.43 ansible_user=ubuntu
+            44.202.104.92 ansible_user=ubuntu

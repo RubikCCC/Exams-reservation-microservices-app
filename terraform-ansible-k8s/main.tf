@@ -85,6 +85,9 @@ resource "aws_route_table_association" "cloud_project_public_route_association" 
 
 resource "aws_route_table" "cloud_project_private_route_table" {
   vpc_id = aws_vpc.cloud_project_vpc.id
+  tags = {
+    Name = "cloud project private route table"
+  }
 }
 
 resource "aws_route_table_association" "cloud_project_private_route_association" {
