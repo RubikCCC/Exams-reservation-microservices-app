@@ -1,0 +1,41 @@
+POST http://54.91.248.107:32010/exams
+Content-Type: application/json
+
+{
+    "courseName": "Sistemi cloud",
+    "date": "2025-02-15T10:30:00",
+    "bookableFrom": "2025-02-03",
+    "bookableTo": "2025-02-10"
+}
+
+###
+
+POST http://54.91.248.107:32010/exams
+Content-Type: application/json
+
+{
+    "courseName": "Sistemi cloud",
+    "date": "2025-02-25T10:30:00",
+    "bookableFrom": "2025-02-13",
+    "bookableTo": "2025-02-20"
+}
+
+###
+
+POST http://54.91.248.107:32010/exams
+Content-Type: application/json
+
+{
+    "courseName": "Ingegneria dei sistemi distribuiti",
+    "date": "2025-02-23T10:30:00",
+    "bookableFrom": "2025-02-11",
+    "bookableTo": "2025-02-18"
+}
+
+###
+
+GET http://54.91.248.107:32010/exams?course_name=Ingegneria dei sistemi distribuiti&date=2025-02-23T10:30:00
+
+###
+
+GET http://54.91.248.107:32010/exams/course?course_name=Sistemi cloud

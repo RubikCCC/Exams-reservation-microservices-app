@@ -1,0 +1,57 @@
+POST http://54.91.248.107:32010/reservations
+Content-Type: application/json
+
+{
+    "email": "cacciatoruben@icloud.com",
+    "examId": 1
+}
+
+###
+
+POST http://54.91.248.107:32010/reservations
+Content-Type: application/json
+
+{
+    "email": "cacciatoruben@icloud.com",
+    "examId": 3
+}
+
+###
+
+POST http://54.91.248.107:32010/reservations
+Content-Type: application/json
+
+{
+    "email": "paololima@gmail.com",
+    "examId": 1
+}
+
+###
+
+GET http://54.91.248.107:32010/reservations/cacciatoruben@icloud.com
+
+###
+
+GET http://54.91.248.107:32010/reservations/paololima@gmail.com
+
+###
+
+POST http://54.91.248.107:32010/reservations
+Content-Type: application/json
+
+{
+    "email": "paololima@gmail.com",
+    "examId": 3
+}
+
+###
+
+GET http://54.91.248.107:32010/reservations?course_name=Sistemi cloud&date=2025-02-15T10:30:00
+
+###
+
+GET http://54.91.248.107:32010/reservations?course_name=Ingegneria dei sistemi distribuiti&date=2025-02-23T10:30:00
+
+###
+
+DELETE http://54.91.248.107:32010/reservations/1
